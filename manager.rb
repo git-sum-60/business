@@ -41,7 +41,7 @@ class Employee
 
   def print_info
     "#{first_name} #{last_name} makes $#{salary} per year."
-  end  
+  end
 
   def give_annual_raise
     @salary *= 1.05
@@ -76,6 +76,12 @@ employee2 = Employee.new(first_name: "Majora", last_name: "Carter", salary: 7000
 # employee2.send_report
 
 class Manager < Employee
+  attr_reader :employees
+  def initialize(input_options)
+    super
+    @employees = input_options[:employees]
+  end
+
   def send_report
     p "going to send a report..."
     # do some logic here to send emails etc
@@ -85,8 +91,8 @@ end
 
 
 
-manager1 = Manager.new(first_name: "Manny", last_name: "Williams", salary: 100000, active: true)
+manager1 = Manager.new(first_name: "Manny", last_name: "Williams", salary: 100000, active: true, employees: [employee1, employee2])
 
 p manager1.print_info
 
-manager1.send_report
+p manager1.employees
