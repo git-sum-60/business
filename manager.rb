@@ -86,10 +86,10 @@ class Manager < Employee
     p "giving everyone a raise..."
     # pseudocode
     # find all the employees for this particiular manager
-    employees
     # go to each of them
-    employees[0].give_annual_raise
-    employees[1].give_annual_raise
+    employees.each do |employee|
+      employee.give_annual_raise
+    end
     # give them a raise
   end
 
