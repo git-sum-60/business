@@ -82,6 +82,18 @@ class Manager < Employee
     @employees = input_options[:employees]
   end
 
+  def give_all_raises
+    p "giving everyone a raise..."
+    # pseudocode
+    # find all the employees for this particiular manager
+    employees
+    # go to each of them
+    employees[0].give_annual_raise
+    employees[1].give_annual_raise
+    # give them a raise
+  end
+
+  
   def send_report
     p "going to send a report..."
     # do some logic here to send emails etc
@@ -91,8 +103,12 @@ end
 
 
 
+
+
 manager1 = Manager.new(first_name: "Manny", last_name: "Williams", salary: 100000, active: true, employees: [employee1, employee2])
 
-p manager1.print_info
+p manager1.employees
+
+manager1.give_all_raises
 
 p manager1.employees
