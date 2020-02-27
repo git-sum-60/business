@@ -3,7 +3,7 @@ require "./email_reportable"
 require "./manager"
 require "./intern"
 
-employee1 = Employee.new({
+employee1 = Actualize::Employee.new({
   :first_name => "Danilo",
   :last_name => "Campos",
   :salary => 80000,
@@ -21,7 +21,7 @@ employee1.first_name = "Mark"
 p employee1.print_info
 
 
-employee2 = Employee.new(first_name: "Majora", last_name: "Carter", salary: 70000, active: false)
+employee2 = Actualize::Employee.new(first_name: "Majora", last_name: "Carter", salary: 70000, active: false)
 p employee2.print_info
 
 # employee2.send_report
@@ -32,7 +32,7 @@ p employee2.print_info
 
 
 
-manager1 = Manager.new(first_name: "Manny", last_name: "Williams", salary: 100000, active: true, employees: [employee1, employee2])
+manager1 = Actualize::Manager.new(first_name: "Manny", last_name: "Williams", salary: 100000, active: true, employees: [employee1, employee2])
 
 p manager1.send_report
 
@@ -52,7 +52,7 @@ p manager1.employees
 
 
 
-intern = Intern.new(first_name: "Ingrid", last_name: "Smith", salary: 0, active: true)
+intern = Actualize::Intern.new(first_name: "Ingrid", last_name: "Smith", salary: 0, active: true)
 
 intern.print_info
 
